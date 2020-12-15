@@ -1,0 +1,27 @@
+{
+  "description": "A package for Neos CMS which embeds ReactJS and Babel.",
+  "license": "GPL-3.0+",
+  "type": "neos-package",
+  "name": "neosrulez/reactjs",
+  "authors": [
+    {
+      "name": "Patric Eckhart",
+      "email": "mail@patriceckhart.com",
+      "homepage": "https://www.patriceckhart.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "neos/neos": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "NeosRulez\\ReactJs\\": "Classes/"
+    }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "NeosRulez.ReactJs"
+    }
+  }
+}

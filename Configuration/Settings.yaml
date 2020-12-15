@@ -1,0 +1,10 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        NeosRulez.ReactJs: true
+NeosRulez:
+  ReactJs:
+    mode: 'development'
+#    mode: 'production'
+    babel: true

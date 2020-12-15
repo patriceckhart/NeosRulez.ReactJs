@@ -1,0 +1,15 @@
+prototype(NeosRulez.ReactJs:Component.Script.Inline) < prototype(Neos.Fusion:Component) {
+    @context.src = ${this.src}
+    inlineRenderer = NeosRulez.ReactJs:Class.Inline {
+        src = ${src}
+    }
+    scriptlineStart = ${this.inlineRenderer ? '<script>' : false}
+    scriptlineEnd = ${this.inlineRenderer ? '</script>' : false}
+    renderer = afx`
+        {props.scriptlineStart}
+        <Neos.Fusion:Loop @if.render={props.inlineRenderer} items={props.inlineRenderer[0]} itemName="scriptline" >
+            {scriptline}
+        </Neos.Fusion:Loop>
+        {props.scriptlineEnd}
+    `
+}

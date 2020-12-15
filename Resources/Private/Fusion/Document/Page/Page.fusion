@@ -1,0 +1,31 @@
+prototype(Neos.Neos:Page) {
+    head {
+        NeosRulezReactJsDevelopment = Neos.Fusion:Component {
+            renderer = afx`
+                <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+                <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+            `
+            @if.render = ${Configuration.setting('NeosRulez.ReactJs.mode') == 'development' ? true : false}
+        }
+        NeosRulezReactJsProduction = Neos.Fusion:Component {
+            renderer = afx`
+                <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+                <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+            `
+            @if.render = ${Configuration.setting('NeosRulez.ReactJs.mode') == 'production' ? true : false}
+        }
+        NeosRulezReactJsBabel = Neos.Fusion:Component {
+            renderer = afx`
+                <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+            `
+            @if.render = ${Configuration.setting('NeosRulez.ReactJs.babel') ? true : false}
+        }
+
+        TestReactJs = NeosRulez.ReactJs:Component.Script.Babel {
+            src = Neos.Fusion:ResourceUri {
+                path = 'resource://NeosRulez.ReactJs/Public/JavaScript/test.js'
+            }
+            inline = true
+        }
+    }
+}
