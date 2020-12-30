@@ -16,10 +16,10 @@ composer require neosrulez/reactjs
 
 ```
 AcmeSiteReactJs = NeosRulez.ReactJs:Component.Script.Tag {
-  src = Neos.Fusion:ResourceUri {
-    path = 'resource://Acme.Site/Public/JavaScript/scripts.js'
-  }
-  inline = true
+    src = Neos.Fusion:ResourceUri {
+        path = 'resource://Acme.Site/Public/JavaScript/scripts.js'
+    }
+    inline = true
 }
 ```
 
