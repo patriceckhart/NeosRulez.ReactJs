@@ -3,7 +3,8 @@ prototype(NeosRulez.ReactJs:Component.Script.Inline) < prototype(Neos.Fusion:Com
     inlineRenderer = NeosRulez.ReactJs:Class.Inline {
         src = ${src}
     }
-    scriptlineStart = ${this.inlineRenderer ? '<script>' : false}
+    babel = ${Configuration.setting('NeosRulez.ReactJs.babel') ? ' type="text/babel" ' : false}
+    scriptlineStart = ${this.inlineRenderer ? '<script' + this.babel + '>' : false}
     scriptlineEnd = ${this.inlineRenderer ? '</script>' : false}
     renderer = afx`
         {props.scriptlineStart}

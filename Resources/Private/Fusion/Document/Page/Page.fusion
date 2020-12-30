@@ -21,7 +21,7 @@ prototype(Neos.Neos:Page) {
             @if.render = ${Configuration.setting('NeosRulez.ReactJs.babel') ? true : false}
         }
 
-        TestReactJs = NeosRulez.ReactJs:Component.Script.Babel {
+        AcmeSiteReactJs = NeosRulez.ReactJs:Component.Script.Tag {
             src = Neos.Fusion:ResourceUri {
                 path = 'resource://NeosRulez.ReactJs/Public/JavaScript/test.js'
             }

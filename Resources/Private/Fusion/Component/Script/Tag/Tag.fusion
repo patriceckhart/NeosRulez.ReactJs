@@ -1,0 +1,7 @@
+prototype(NeosRulez.ReactJs:Component.Script.Tag) < prototype(Neos.Fusion:Component) {
+    babel = ${Configuration.setting('NeosRulez.ReactJs.babel') ? 'text/babel' : false}
+    renderer = afx`
+        <NeosRulez.ReactJs:Component.Script.Inline @if.render={props.inline} src={props.src} />
+        <script @if.render={!props.inline} src={props.src} type={props.babel} ></script>
+    `
+}
